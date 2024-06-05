@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Four</title>
+</head>
+<body>
+    <h1>Task Four</h1>
+    
+    <input type="number" id="x" placeholder="Enter x value">
+    <input type="number" id="y" placeholder="Enter y value">
+    <button onclick="display()">Click</button>
+    <p id="answer"></p>
+
+    <script>
+        function display() {
+            let x = parseFloat(document.getElementById("x").value);
+            let y = parseFloat(document.getElementById("y").value);
+            let result;
+
+            if (isNaN(x) || isNaN(y) ) {
+                alert("Please enter valid numbers");
+            } 
+            else if(x>y){
+                document.write("Hello word");
+            }else if(x<=y){
+                document.write("Goodbye");
+            }
+            document.getElementById("answer").innerHTML = `<b>${result}</b>`; 
+        }
+    </script>
+</body>
+</html>

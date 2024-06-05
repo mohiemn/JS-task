@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task one</title>
+</head>
+<body>
+    <h1>Task one</h1>
+    
+    <input type="number" id="num1" placeholder="Enter your first number">
+    <input type="text" id="operation" placeholder="Enter operation:">
+    <input type="number" id="num2" placeholder="Enter your second number">
+    <button onclick="calculate()">Click</button>
+    <p id="answer"></p>
+
+    <script>
+        function calculate() {
+            let operation = document.getElementById("operation").value;
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result;
+
+          
+            if (isNaN(num1) || isNaN(num2) || operation !== "+" && operation !== "-" && operation !== "*" && operation !== "/") {
+                alert("Please enter valid numbers or operation");
+            } 
+            switch (operation) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    if (num2 === 0) {
+                        errorMessage = "Cannot divide by zero.";
+                    } else {
+                        result = num1 / num2;
+                    }
+                    break;
+                
+            }
+            document.getElementById("answer").innerHTML = `${num1} <b>${operation}</b> ${num2} = <b>${result}</b>`; 
+        }
+    </script>
+</body>
+</html>
